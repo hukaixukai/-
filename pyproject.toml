@@ -1,0 +1,23 @@
+[project]
+name = "study-companion"
+version = "0.1.0"
+description = "智能学伴 - AI-powered intelligent study companion"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.0",
+    "fastapi>=0.100",
+    "uvicorn[standard]",
+    "rich",
+    "python-dotenv",
+    "faiss-cpu",
+    "PyMuPDF",
+    "Pillow",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+ocr = ["pytesseract"]
+
+[project.scripts]
+study-companion = "main:main"
+study-api = "api_server:main"
